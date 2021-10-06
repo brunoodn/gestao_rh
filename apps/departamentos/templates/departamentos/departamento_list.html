@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<h2>Departamentos</h2>
+  <br>
+    <table class="table table-light">
+        <thead>
+            <th>Departamento</th>
+            <th>Empresa</th>
+            <th>Ações</th>
+    {% for d in object_list %}
+            <tbody>
+                <td><a href="{% url 'update_departamento' d.id %}"> {{ d.nome }} </a></td>
+                <td>{{ d.empresa }} </td>
+                <td><a href="{% url 'delete_departamento' d.id %}"> Deletar[X]  </a></td>
+            </tbody>
+
+
+    {% endfor %}
+    <table>
+<a class="btn btn-primary" href="{% url 'create_departamento' %}"> Novo </a>
+{% endblock %}
+
+
+
+

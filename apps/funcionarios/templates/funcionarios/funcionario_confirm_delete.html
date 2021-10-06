@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form method="post">{% csrf_token %}
+    <p>Tem certeza que deseja deletaro usuario "{{ object }}"?</p>
+    <input class="btn btn-danger" type="submit" value="Confirmar">
+</form>
+
+{% endblock %}
