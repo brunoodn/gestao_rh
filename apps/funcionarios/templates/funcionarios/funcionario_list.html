@@ -2,15 +2,23 @@
 
 {% block main %}
     <br>
+    <table class="table table-light">
+        <thead>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Empresa</th>
+            <th>Ações</th>
+        </thead>
     {% for f in object_list %}
-        <a href="{% url 'update_funcionario' f.id %}">
-            {{ f.nome }}
-        </a>
-        <a href="{% url 'delete_funcionario' f.id %}">
-            [X]
-        </a>
-        <br>
+        <tbody>
+            <td><a href="{% url 'update_funcionario' f.id %}">{{ f.nome }} </a></td>
+            <td>{{ f.departamentos.nome }} </td>
+            <td>{{ f.empresa }}</td>
+            <td><a href="{% url 'delete_funcionario' f.id %}"> Delete [X]  </a></a></td>
+        </tbody>
 
+        <br>
     {% endfor %}
+    </table>
 <a class="btn btn-primary" href="{% url 'create_funcionario' %}"> Novo </a>
     {% endblock %}

@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.registro_hora_extra',
     'apps.core',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +103,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 
 ]
+MEDIA_ROOT = BASE_DIR / "media"
 
 LOGIN_REDIRECT_URL = "home"
 
