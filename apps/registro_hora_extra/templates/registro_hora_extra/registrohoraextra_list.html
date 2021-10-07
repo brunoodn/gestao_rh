@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h2>Registro horas extras</h2>
+<br>
+<br>
+<table class="table table-light">
+    <thead>
+        <th>Funcionario</th>
+        <th>Motivo</th>
+        <th>Empresa</th>
+        <th>Qtds horas</th>
+    </thead>
+
+{% for bh in object_list %}
+    <tbody>
+        <td>{{ bh.funcionario }}</td>
+        <td>{{ bh }}</td>
+        <td>{{ bh.funcionario.empresa }}</td>
+        <td>{{ bh.horas }}</td>
+    </tbody>
+
+{% endfor %}
+ </table>
+{% endblock %}
