@@ -10,16 +10,24 @@
         <th>Motivo</th>
         <th>Empresa</th>
         <th>Qtds horas</th>
+        <th>Ações</th>
+
     </thead>
 
 {% for bh in object_list %}
     <tbody>
-        <td>{{ bh.funcionario }}</td>
+        <td><a href="{% url 'update_hora_extra' bh.id %}">{{ bh.funcionario }}</a></td>
         <td>{{ bh }}</td>
         <td>{{ bh.funcionario.empresa }}</td>
         <td>{{ bh.horas }}</td>
+        <td><a href="{% url 'delete_hora_extra' bh.id %}">Delete [x]</a></td>
     </tbody>
-
+        {% empty %}
+    <td align="center" colspan="5">Não existe registros</td>
 {% endfor %}
  </table>
+
+<a class="btn btn-info" href="{% url 'create_hora_extra' %}">Novo</a>
+
+
 {% endblock %}

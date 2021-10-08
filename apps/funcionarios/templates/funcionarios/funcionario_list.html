@@ -16,8 +16,8 @@
             <td>{{ f.empresa }}</td>
             <td><a href="{% url 'delete_funcionario' f.id %}"> Delete [X]  </a></a></td>
         </tbody>
-
-        <br>
+    {% empty %}
+        <td colspan="4">Não existe funcionarios</td>
     {% endfor %}
     </table>
 <a class="btn btn-primary" href="{% url 'create_funcionario' %}"> Novo </a>

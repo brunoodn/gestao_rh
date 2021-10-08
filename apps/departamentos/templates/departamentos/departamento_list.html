@@ -15,8 +15,8 @@
                 <td>{{ d.empresa }} </td>
                 <td><a href="{% url 'delete_departamento' d.id %}"> Deletar[X]  </a></td>
             </tbody>
-
-
+    {% empty %}
+        <td colspan="3">Não existe departamentos..</td>
     {% endfor %}
     <table>
 <a class="btn btn-primary" href="{% url 'create_departamento' %}"> Novo </a>
