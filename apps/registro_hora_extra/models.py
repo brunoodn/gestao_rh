@@ -10,7 +10,8 @@ class RegistroHoraExtra(models.Model):
     horas = models.DecimalField(max_digits=5, decimal_places=2)
 
     def get_absolute_url(self):
-        return reverse('list_hora_extra', args=[self.id])
+        #return reverse('list_hora_extra', args=[self.id]) anterior
+        return reverse('list_hora_extra')
 
     def __str__(self):
         return self.motivo

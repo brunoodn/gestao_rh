@@ -11,7 +11,6 @@ class HoraExtraList(ListView):
         empresa_logada = self.request.user.funcionario.empresa
         return RegistroHoraExtra.objects.filter(funcionario__empresa=empresa_logada)
 
-
 class HoraExtraEdit(UpdateView):
     model = RegistroHoraExtra
     form_class = RegistroHoraExtraForm
