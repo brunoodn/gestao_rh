@@ -4,24 +4,24 @@
 {% block main %}
 <h2>Departamentos</h2>
   <br>
-    <table class="table table-light">
+    <table class="table table-hover">
         <thead>
-            <th>Departamento</th>
-            <th>Empresa</th>
-            <th>Ações</th>
+            <tr>
+                <th>Departamento</th>
+                <th>Empresa</th>
+                <th>Ações</th>
+            </tr>
     {% for d in object_list %}
             <tbody>
-                <td><a href="{% url 'update_departamento' d.id %}"> {{ d.nome }} </a></td>
-                <td>{{ d.empresa }} </td>
-                <td><a href="{% url 'delete_departamento' d.id %}"> Deletar[X]  </a></td>
+                <tr>
+                    <td><a href="{% url 'update_departamento' d.id %}"> {{ d.nome }} </a></td>
+                    <td>{{ d.empresa }} </td>
+                    <td><a href="{% url 'delete_departamento' d.id %}"> Deletar[X]  </a></td>
+                    {% empty %}
+                        <td colspan="3">Não existe departamentos..</td>
+                    {% endfor %}
+                </tr>
             </tbody>
-    {% empty %}
-        <td colspan="3">Não existe departamentos..</td>
-    {% endfor %}
-    <table>
+    </table>
 <a class="btn btn-primary" href="{% url 'create_departamento' %}"> Novo </a>
 {% endblock %}
-
-
-
-
